@@ -30,6 +30,10 @@
     border: 1px solid #333;
 }
 
+.thumb.selected {
+    background-color: #16C7A4;
+}
+
 .portrait {
     width: 96px;
     height: 128px;
@@ -38,4 +42,14 @@
 .landscape {
     width: 240px;
     height: 128px;
+}
+
+#indexVal {
+    color: #16C7A4;
+}
+
+.submitter {
+    width: 100%;
+    text-align: center;
+    padding-top: 24px;
 }

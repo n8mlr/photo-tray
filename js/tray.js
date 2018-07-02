@@ -5,10 +5,6 @@ class Tray {
 		this.element = document.getElementById(elementId);
 	}
 
-	open(trayContentId) {
-		this.load(trayContentId);
-	}
-
 	load(trayContentId) {
 		this.empty();
 
@@ -31,9 +27,24 @@ class Tray {
 			// set the OL to the width of its children
 			container.style.width = trayWidth + "px";
 		}
-
-		
 	}
+
+	// Selects a thumbnail in the tray
+	select(index) {
+		let container = this.element.children[0];
+		let selectedListItem = this.element.children[0].children[index];
+		selectedListItem.firstChild.classList.add("selected");
+
+		// scroll the panel so the element is in view
+		console.log(this.element.scrollLeft);
+
+		let sw = this.element.scrollWidth;
+		let sl = this.element.scrollLeft;
+
+
+	}
+
+	// scroll to view
 
 	// removes all items in the tray
 	empty() {
@@ -43,5 +54,38 @@ class Tray {
 	}
 }
 
+// Bind controls
+document.getElementById("selItems").onchange = function(event) {
+	updateRange(0, event.target.value);
+}
 
-let tray = new Tray('tray')
+// bust cached select values on page refresh
+var options = document.getElementById('selItems');
+for (var i = 0, l = options.length; i < l; i++) {
+    options[i].selected = options[i].defaultSelected;
+}
+
+document.getElementById("selItemsIndex").onchange = function(event) {
+	document.getElementById("indexVal").innerHTML = event.target.value;
+}
+
+document.getElementById("btn").onclick = function(event) {
+	let arrTrays = ['tray1', 'tray2', 'tray3'];
+	let selTrays = document.getElementById("selItems").selectedIndex;
+	let selIndex = document.getElementById("selItemsIndex");
+	tray.load(arrTrays[selTrays]);
+	tray.select(selIndex.value);
+}
+
+function updateRange(val, max) {
+	let rangeControl = document.getElementById("selItemsIndex");
+	rangeControl.value = val - 1;
+	rangeControl.setAttribute('max', max - 1);
+	document.getElementById("indexVal").innerHTML = val;
+}
+
+
+// let's go
+
+updateRange(0, 4);
+let tray = new Tray('tray');

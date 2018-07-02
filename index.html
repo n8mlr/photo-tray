@@ -15,9 +15,25 @@
             <div class="meta">
                 <h1 class="title">Photo Tray</h1>
                 <h2>How thumbnail alignment should work</h2>
-                <a class="button teal1" onclick="tray.open('tray1')">4 items</a>
-                <a class="button teal1" onclick="tray.open('tray2')">8 items</a>
-                <a class="button teal1" onclick="tray.open('tray3')">24 items</a>
+
+
+                <div class="formLineWrap">
+                    <label for="selItems" class="fLeft">Number of items</label>
+                    <select id="selItems" class="fRight">
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="24">24</option>
+                    </select>
+                </div>
+
+                <div class="formLineWrap">
+                    <label for="selItemsIndex" class="fLeft">Selected index: <span id="indexVal">0</span></label>
+                    <input type="range" id="selItemsIndex" class="fRight" min="0" value="0">
+                </div>
+
+                <div class="submitter">
+                    <a id="btn" class="button teal1">Load tray</a>
+                </div>
             </div>
         </div>
         <div id="tray" class="tray">

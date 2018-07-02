@@ -4,15 +4,30 @@
     position: fixed;
     background-color: #fafcff;
     bottom: 0;
+    overflow-x: scroll;
+    text-align: center;
+}
+
+.tray ol {
+    margin: 0;
+    padding: 0;
+}
+.tray ol::after { 
+  content: "";
+  display: block; 
+  clear: both;
 }
 
 .tray li {
     display: inline-block;
+    box-sizing: border-box;
+    padding: 8px;
 }
 
 .thumb {
     background-color: #ededed;
     display: block;
+    border: 1px solid #333;
 }
 
 .portrait {

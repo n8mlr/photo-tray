@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Photo tray</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lwg4zkm.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper" id="container">
+        <div class="leftPanel">
+            <div class="meta">
+                <h1 class="title">Photo Tray</h1>
+                <h2>How thumbnail alignment should work</h2>
+                <a class="button teal1" onclick="tray.open('tray1')">4 items</a>
+                <a class="button teal1" onclick="tray.open('tray2')">8 items</a>
+                <a class="button teal1" onclick="tray.open('tray3')">24 items</a>
+            </div>
+        </div>
+        <div id="tray" class="tray">
+        </div>
+    </div>
+    <div class="orthobg"></div>
+    <template id="tray1">
+        <ol>
+            <li><a class="thumb portrait"></a></li>
+            <li><a class="thumb landscape"></a></li>
+            <li><a class="thumb landscape"></a></li>
+            <li><a class="thumb portrait"></a></li>
+        </ol>
+    </template>
+    <template id="tray2">
+    </template>
+    <template id="tray3">
+    </template>
+    <script src="/lib/greensock/src/minified/TweenMax.min.js"></script>
+    <script src="js/tray.js"></script>
+</body>
+
+</html>

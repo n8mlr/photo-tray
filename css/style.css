@@ -1,0 +1,26 @@
+.tray {
+    height: 168px;
+    width: 100%;
+    position: fixed;
+    background-color: #fafcff;
+    bottom: 0;
+}
+
+.tray li {
+    display: inline-block;
+}
+
+.thumb {
+    background-color: #ededed;
+    display: block;
+}
+
+.portrait {
+    width: 96px;
+    height: 128px;
+}
+
+.landscape {
+    width: 240px;
+    height: 128px;
+}

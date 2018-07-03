@@ -35,13 +35,14 @@ class Tray {
 		let selectedListItem = this.element.children[0].children[index];
 		selectedListItem.firstChild.classList.add("selected");
 
-		// scroll the panel so the element is in view
-		console.log(this.element.scrollLeft);
+		// get the x offset of the seleced thumbnail when centered
+		let itemOffset = selectedListItem.offsetLeft + (selectedListItem.clientWidth / 2);
+		this.element.scrollLeft = itemOffset - (this.element.clientWidth / 2);
+	}
 
-		let sw = this.element.scrollWidth;
-		let sl = this.element.scrollLeft;
-
-
+	// returns a ratio of the current scroll positon
+	calcScrollRatio() {
+		return this.element.scrollLeft / (this.element.scrollWidth - window.innerWidth);
 	}
 
 	// scroll to view
